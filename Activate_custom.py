@@ -52,18 +52,14 @@ def GetCustomActions(
     cases, this is Bash on Linux systems and Batch or PowerShell on Windows systems.
     """
 
+    if configuration == "Noop":
+        return []
+
     actions = [
         CurrentShell.Commands.Set("CXX", "cl"),
         CurrentShell.Commands.Set("CC", "cl"),
-        CurrentShell.Commands.Augment(
-            "DEVELOPMENT_ENVIRONMENT_TESTER_CONFIGURATIONS",
-            "c++-coverage_executor-MSVCCodeCoverage",
-            update_memory=True,
-        ),
     ]
 
-    # TODO: Add Test Executor
-    
     return actions
 
 

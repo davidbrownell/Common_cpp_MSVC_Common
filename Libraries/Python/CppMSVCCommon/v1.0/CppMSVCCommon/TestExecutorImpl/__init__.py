@@ -35,7 +35,6 @@ from CommonEnvironment.TestExecutorImpl import TestExecutorImpl as TestExecutorI
 
 from CppCommon import CodeCoverageFilter
 
-from CppClangCommon.CodeCoverageExecutor import CodeCoverageExecutor as ClangCodeCoverageExecutor
 from CppMSVCCommon.TestExecutorImpl.CodeCoverageExecutor import CodeCoverageExecutor as MSVCCodeCoverageExecutor
 
 # ----------------------------------------------------------------------
@@ -81,10 +80,7 @@ class TestExecutorImpl(TestExecutorImplBase):
         coverage_start_time = time.time()
         coverage_output = OrderedDict()
 
-        if os.getenv("CXX") == "clang-cl":
-            code_coverage_executor = ClangCodeCoverageExecutor()
-        else:
-            code_coverage_executor = MSVCCodeCoverageExecutor()
+        code_coverage_executor = MSVCCodeCoverageExecutor()
 
         # ----------------------------------------------------------------------
         def Impl():

@@ -112,12 +112,11 @@ def GetDependencies():
                         architecture,
                         "https://github.com/davidbrownell/Common_cpp_MSVC_WindowsKits_10.git",
                     ),
-                    # Clang is a dependency for clang-format.exe
                     Dependency(
-                        "3DE9F3430E494A6C8429B26A1503C895",
-                        "Common_cpp_Clang_8",
+                        "F33C43DA6BB54336A7573B39509CDAD7",
+                        "Common_cpp_Common",
                         architecture,
-                        "https://github.com/davidbrownell/Common_cpp_Clang_8.git",
+                        "https://github.com/davidbrownell/Common_cpp_Common.git",
                     ),
                 ],
             )

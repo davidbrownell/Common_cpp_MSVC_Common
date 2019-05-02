@@ -96,12 +96,7 @@ def GetDependencies():
     
     d = OrderedDict()
 
-    if CurrentShell.CategoryName != "Windows":
-        d["Noop"] = Configuration(
-            "This repository is only supported on Windows",
-            [Dependency("0EAA1DCF22804F90AD9F5A3B85A5D706", "Common_Environment", "python36", "https://github.com/davidbrownell/Common_Environment_v3.git")],
-        )
-    else:
+    if CurrentShell.CategoryName == "Windows":
         for architecture in ["x64", "x86"]:
             d[architecture] = Configuration(
                 architecture,
@@ -120,6 +115,11 @@ def GetDependencies():
                     ),
                 ],
             )
+
+    d["Noop"] = Configuration(
+        "Configuration that doesn't do anything; this is useful on non-Windows machines or in Bootstrap repositories (where different versions of MSVC conflict with each other (normally, MSVC repositories are mutually exclusive))",
+        [Dependency("0EAA1DCF22804F90AD9F5A3B85A5D706", "Common_Environment", "python36", "https://github.com/davidbrownell/Common_Environment_v3.git")],
+    )
 
     return d
 

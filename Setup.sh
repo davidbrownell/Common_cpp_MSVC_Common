@@ -19,7 +19,7 @@ set +v                                      # Disable output
 # ----------------------------------------------------------------------
 # |  
 # |  Run as:
-# |     sudo -E ./Setup.sh [/debug] [/verbose] [/configuration=<config_name>]*
+# |     ./Setup.sh [/debug] [/verbose] [/configuration=<config_name>]*
 # |  
 # ----------------------------------------------------------------------
 # Note that sudo is necessary because the process will create symbolic links

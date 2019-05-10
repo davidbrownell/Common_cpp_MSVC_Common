@@ -33,6 +33,8 @@ Please run Activate.ps1 within a repository before running this script. It may b
     ExitScript
 }
 
-Invoke-Expression "$env:DEVELOPMENT_ENVIRONMENT_FUNDAMENTAL\RepositoryBootstrap\Impl\Setup.cmd '$PSScriptRoot' $args"
+pushd "$PSScriptRoot"
+Invoke-Expression "$env:DEVELOPMENT_ENVIRONMENT_FUNDAMENTAL\RepositoryBootstrap\Impl\Setup.cmd $args"
+popd
 
 ExitScript

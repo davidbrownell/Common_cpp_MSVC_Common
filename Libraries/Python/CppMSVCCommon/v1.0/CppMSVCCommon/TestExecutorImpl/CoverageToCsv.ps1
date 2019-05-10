@@ -10,7 +10,7 @@ param(
 )
     $coverage_filename = Resolve-Path -Path "$coverage_filename"
     $coverage_dirname = Split-Path -Path "$coverage_filename" -Parent
- 
+    
     Add-Type -Path "${env:DevEnvDir}Extensions\TestPlatform\Microsoft.VisualStudio.Coverage.Analysis.dll"
 
     $executable_paths = New-Object "System.Collections.Generic.List[String]"

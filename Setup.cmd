@@ -17,7 +17,7 @@
 @REM ----------------------------------------------------------------------
 @REM |  
 @REM |  Run as:
-@REM |     Setup.cmd [/debug] [/verbose] [/configuration=<config_name>]*
+@REM |     Setup.cmd [/debug] [/verbose] [/configuration_EQ_<config_name>]*
 @REM |  
 @REM ----------------------------------------------------------------------
 
@@ -28,6 +28,11 @@ if "%DEVELOPMENT_ENVIRONMENT_FUNDAMENTAL%"=="" (
     goto end
 )
 
-call %DEVELOPMENT_ENVIRONMENT_FUNDAMENTAL%\RepositoryBootstrap\Impl\Setup.cmd %~dp0 %*
+pushd "%~dp0"
+call %DEVELOPMENT_ENVIRONMENT_FUNDAMENTAL%\RepositoryBootstrap\Impl\Setup.cmd %*
+set _SETUP_ERROR=%ERRORLEVEL%
+popd
+
+if %_SETUP_ERROR% NEQ 0 (exit /B %_SETUP_ERROR%)
 
 :end

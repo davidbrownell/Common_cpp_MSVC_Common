@@ -120,6 +120,8 @@ class CodeCoverageExecutor(CodeCoverageExecutorBase):
                 for row in reader:
                     if not isinstance(row, (tuple, list)):
                         raise Exception(row)
+                    if len(row) == 1:
+                        raise Exception(row[0])
 
                     method_name = row[1]
                     if not ShouldInclude(method_name):

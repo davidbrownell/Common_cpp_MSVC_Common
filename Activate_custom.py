@@ -52,15 +52,7 @@ def GetCustomActions(
     cases, this is Bash on Linux systems and Batch or PowerShell on Windows systems.
     """
 
-    if configuration == "noop":
-        return []
-
-    actions = [
-        CurrentShell.Commands.Set("CXX", "cl"),
-        CurrentShell.Commands.Set("CC", "cl"),
-    ]
-
-    return actions
+    return []
 
 
 # ----------------------------------------------------------------------

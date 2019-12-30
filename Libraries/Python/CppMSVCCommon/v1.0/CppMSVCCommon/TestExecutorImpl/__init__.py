@@ -27,7 +27,7 @@ from CppMSVCCommon.TestExecutorImpl.CodeCoverageExecutor import CodeCoverageExec
 # ----------------------------------------------------------------------
 _script_fullpath                            = CommonEnvironment.ThisFullpath()
 _script_dir, _script_name                   = os.path.split(_script_fullpath)
-#  ----------------------------------------------------------------------
+# ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
 class TestExecutorImpl(TestExecutorImplBase):

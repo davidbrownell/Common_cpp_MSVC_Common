@@ -32,7 +32,7 @@ from CppCommon.CodeCoverageExecutor import CodeCoverageExecutor as CodeCoverageE
 # ----------------------------------------------------------------------
 _script_fullpath                            = CommonEnvironment.ThisFullpath()
 _script_dir, _script_name                   = os.path.split(_script_fullpath)
-#  ----------------------------------------------------------------------
+# ----------------------------------------------------------------------
 
 # ----------------------------------------------------------------------
 @Interface.staticderived
@@ -131,7 +131,7 @@ class CodeCoverageExecutor(CodeCoverageExecutorBase):
                     not_covered += int(row[-1])
 
             return covered, not_covered
-                
+
 
 # ----------------------------------------------------------------------
 # ----------------------------------------------------------------------
